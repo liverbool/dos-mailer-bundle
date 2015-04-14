@@ -1,6 +1,6 @@
 {
-    "name": "liverbool/dos-settings-bundle",
-    "description": "Setting Bundle for Symfony",
+    "name": "liverbool/dos-mailer-bundle",
+    "description": "Mailer Bundle for Symfony",
     "license": "MIT",
     "authors": [
         {
@@ -10,18 +10,17 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "liverbool/dos-resource-bundle": "dev-master",
-        "sylius/settings-bundle": "dev-master"
+        "sylius/mailer-bundle": "dev-master"
     },
     "require-dev": {
         "liil/kint": "1.0",
         "phpspec/phpspec": "~2.1"
     },
     "autoload": {
-        "psr-4": { "DoS\\SettingsBundle\\": "" }
+        "psr-4": { "DoS\\MailerBundle\\": "" }
     },
     "autoload-dev": {
-        "psr-4": { "DoS\\SettingsBundle\\spec\\": "spec/" }
+        "psr-4": { "DoS\\MailerBundle\\spec\\": "spec/" }
     },
     "extra": {
         "branch-alias": {
