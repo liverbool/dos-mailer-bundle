@@ -10,7 +10,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "sylius/mailer-bundle": "dev-master"
+        "sylius/mailer": "0.14.*@dev",
+        "sylius/mailer-bundle": "0.14.*@dev"
     },
     "require-dev": {
         "liil/kint": "1.0",
