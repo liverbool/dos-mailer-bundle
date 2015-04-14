@@ -16,8 +16,7 @@ class Configuration extends AbstractResourceConfiguration
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('dos_mailer');
 
-        $this->addDefaults($rootNode, 'doctrine/orm', 'default', array(
-        ));
+        $this->addDefaults($rootNode, 'doctrine/orm');
 
         $rootNode
             ->children()
