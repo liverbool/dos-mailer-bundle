@@ -1,0 +1,3 @@
+DoS\MailerBundle\Model\Email:
+    type: mappedSuperclass
+    table: dos_mailer_email

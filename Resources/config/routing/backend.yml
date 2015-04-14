@@ -1,0 +1,3 @@
+route_backend_mailer_emails:
+    resource: @DoSMailerBundle/Resources/config/routing/backend/email.yml
+    prefix: /emails

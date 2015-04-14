@@ -1,0 +1,31 @@
+{
+    "name": "liverbool/dos-settings-bundle",
+    "description": "Setting Bundle for Symfony",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ツ Liverbool",
+            "email": "nukboon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "liverbool/dos-resource-bundle": "dev-master",
+        "sylius/settings-bundle": "dev-master"
+    },
+    "require-dev": {
+        "liil/kint": "1.0",
+        "phpspec/phpspec": "~2.1"
+    },
+    "autoload": {
+        "psr-4": { "DoS\\SettingsBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": { "DoS\\SettingsBundle\\spec\\": "spec/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master-dev"
+        }
+    }
+}
