@@ -29,7 +29,10 @@ class Configuration extends AbstractResourceConfiguration
             ->append($this->createResourcesSection(array(
                 'email' => array(
                     'model' => 'DoS\MailerBundle\Model\Email',
-                ), )
+                    'form' => array(
+                        'default' => 'DoS\MailerBundle\Form\Type\EmailType',
+                    )
+                ))
             ))
         ;
 
