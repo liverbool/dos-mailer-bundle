@@ -30,7 +30,8 @@ class DoSMailerExtension extends AbstractResourceExtension implements PrependExt
         $configs = $container->getExtensionConfig($this->getAlias());
         // use the Configuration class to generate a config array with
         $config = $this->processConfiguration(new Configuration(), $configs);
-
+        // no sylius config
+        unset($config['object_manager']);
         $container->prependExtensionConfig('sylius_mailer', $config);
     }
 }
