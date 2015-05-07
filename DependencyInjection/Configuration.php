@@ -25,16 +25,16 @@ class Configuration extends AbstractResourceConfiguration
             ->end()
         ;
 
-        $rootNode
-            ->append($this->createResourcesSection(array(
+        $this->setDefaults($rootNode, array(
+            'classes' => array(
                 'email' => array(
                     'model' => 'DoS\MailerBundle\Model\Email',
                     'form' => array(
                         'default' => 'DoS\MailerBundle\Form\Type\EmailType',
                     )
-                ))
-            ))
-        ;
+                ),
+            )
+        ));
 
         $this->addEmailsSection($rootNode);
 
