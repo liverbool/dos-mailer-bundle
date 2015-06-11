@@ -34,6 +34,6 @@ class TwigMarkdownAdapter extends TwigAdapter
             $mail->setContent($this->markdownHelper->transform($mail->getContent()));
         }
 
-        parent::render($mail, $data);
+        return parent::render($mail, $data);
     }
 }
