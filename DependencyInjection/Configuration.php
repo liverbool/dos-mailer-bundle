@@ -31,9 +31,9 @@ class Configuration extends AbstractResourceConfiguration
                     'model' => 'DoS\MailerBundle\Model\Email',
                     'form' => array(
                         'default' => 'DoS\MailerBundle\Form\Type\EmailType',
-                    )
+                    ),
                 ),
-            )
+            ),
         ));
 
         $this->addEmailsSection($rootNode);
