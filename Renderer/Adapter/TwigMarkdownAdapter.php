@@ -6,6 +6,7 @@ use Knp\Bundle\MarkdownBundle\Helper\MarkdownHelper;
 use Sylius\Bundle\MailerBundle\Renderer\Adapter\TwigAdapter;
 use Sylius\Component\Mailer\Model\EmailInterface;
 
+/** @deprecated Use SyliusMailerEvents::EMAIL_PRE_RENDER event */
 class TwigMarkdownAdapter extends TwigAdapter
 {
     /**
