@@ -23,6 +23,9 @@
     "autoload-dev": {
         "psr-4": { "DoS\\MailerBundle\\spec\\": "spec/" }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.15-dev"
