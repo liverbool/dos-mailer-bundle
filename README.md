@@ -1,4 +1,4 @@
-# Dosena Resource Bundle
+# Dosena Mailer Bundle
 
 [![Build Status](https://travis-ci.org/liverbool/dos-mailer-bundle.svg?branch=2.0)](https://travis-ci.org/liverbool/dos-mailer-bundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/liverbool/dos-mailer-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/liverbool/dos-mailer-bundle/?branch=master)
