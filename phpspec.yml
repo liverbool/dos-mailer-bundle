@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: DoS\MailerBundle
+        psr4_prefix: DoS\MailerBundle
+        src_path: .
