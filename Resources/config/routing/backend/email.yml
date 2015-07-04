@@ -4,7 +4,7 @@ route_backend_email_index:
     defaults:
         _controller: sylius.controller.email:indexAction
         _sylius:
-            template: ui:package/backend/Email:index.html.twig
+            template: ui:backend/Email:index.html.twig
             sortable: true
             sorting:
                 code: desc
@@ -15,16 +15,16 @@ route_backend_email_create:
     defaults:
         _controller: sylius.controller.email:createAction
         _sylius:
-            template: ui:package/backend/Email:create.html.twig
+            template: ui:backend/Email:create.html.twig
             redirect: route_backend_email_index
 
 route_backend_email_update:
     path: /{id}/edit
-    methods: [GET, PUT]
+    methods: [GET, PUT, PATCH]
     defaults:
         _controller: sylius.controller.email:updateAction
         _sylius:
-            template: ui:package/backend/Email:update.html.twig
+            template: ui:backend/Email:update.html.twig
             redirect: route_backend_email_index
 
 route_backend_email_delete:
