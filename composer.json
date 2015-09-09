@@ -11,7 +11,8 @@
     "minimum-stability": "dev",
     "require": {
         "sylius/mailer": "0.16.*@dev",
-        "sylius/mailer-bundle": "0.16.*@dev"
+        "sylius/mailer-bundle": "0.16.*@dev",
+        "mailgun/mailgun-php" : ">=1.7"
     },
     "require-dev": {
         "liil/kint": "1.0",

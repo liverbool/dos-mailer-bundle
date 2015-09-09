@@ -2,8 +2,11 @@ parameters:
     dos.mailer.sender.name: EDITME_IN_PARAM
     dos.mailer.sender.address: EDITME_IN_PARAM
     dos.mailer.notify: EDITME_IN_PARAM
+    dos.mailer.mailgun.key: EDITME_IN_PARAM
+    dos.mailer.mailgun.domain: EDITME_IN_PARAM
 
     dos.mailer.renderer_adapter.class: DoS\MailerBundle\Renderer\Adapter\TwigMarkdownAdapter
+    dos.mailer.transportor.mailgun.class: DoS\MailerBundle\Transportor\MailgunTransport
 
 services:
     dos.mailer.renderer_adapter:
@@ -11,3 +14,15 @@ services:
         class: %dos.mailer.renderer_adapter.class%
         calls:
             - [setMarkdownHelper, [@templating.helper.markdown]]
+
+    dos.mailer.mailgun:
+        class: Mailgun\Mailgun
+        arguments:
+            - %dos.mailer.mailgun.key%
+
+    dos.mailer.transportor.mailgun:
+        class: %dos.mailer.transportor.mailgun.class%
+        arguments:
+            -
+            - dos.mailer.mailgun
+            - %dos.mailer.mailgun.domain%
