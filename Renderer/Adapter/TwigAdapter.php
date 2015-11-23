@@ -2,42 +2,19 @@
 
 namespace DoS\MailerBundle\Renderer\Adapter;
 
-use Knp\Bundle\MarkdownBundle\Helper\MarkdownHelper;
-use Sylius\Bundle\MailerBundle\Renderer\Adapter\TwigAdapter;
+use Sylius\Bundle\MailerBundle\Renderer\Adapter\TwigAdapter as BaseTwigAdapter;
 use Sylius\Component\Mailer\Event\EmailRenderEvent;
 use Sylius\Component\Mailer\Model\EmailInterface;
 use Sylius\Component\Mailer\Renderer\RenderedEmail;
 use Sylius\Component\Mailer\SyliusMailerEvents;
 
-/** @deprecated Use SyliusMailerEvents::EMAIL_PRE_RENDER event */
-class TwigMarkdownAdapter extends TwigAdapter
+class TwigAdapter extends BaseTwigAdapter
 {
-    /**
-     * @var MarkdownHelper
-     */
-    protected $markdownHelper;
-
-    /**
-     * @param MarkdownHelper $markdownHelper
-     */
-    public function setMarkdownHelper(MarkdownHelper $markdownHelper)
-    {
-        $this->markdownHelper = $markdownHelper;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function render(EmailInterface $email, array $data = array())
     {
-        $mail = $email;
-
-        // lazy code ;) use only $email is readOnly
-        if ($this->markdownHelper) {
-            $mail = clone $email;
-            $mail->setContent($this->markdownHelper->transform($mail->getContent()));
-        }
-
         if (null !== $email->getTemplate()) {
             $data = $this->twig->mergeGlobals($data);
 

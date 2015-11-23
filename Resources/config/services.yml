@@ -5,15 +5,13 @@ parameters:
     dos.mailer.mailgun.key: EDITME_IN_PARAM
     dos.mailer.mailgun.domain: EDITME_IN_PARAM
 
-    dos.mailer.renderer_adapter.class: DoS\MailerBundle\Renderer\Adapter\TwigMarkdownAdapter
+    dos.mailer.renderer_adapter.class: DoS\MailerBundle\Renderer\Adapter\TwigAdapter
     dos.mailer.transportor.mailgun.class: DoS\MailerBundle\Transportor\MailgunTransport
 
 services:
     dos.mailer.renderer_adapter:
         parent: sylius.email_renderer.adapter.twig
         class: %dos.mailer.renderer_adapter.class%
-        calls:
-            - [setMarkdownHelper, [@templating.helper.markdown]]
 
     dos.mailer.mailgun:
         class: Mailgun\Mailgun
