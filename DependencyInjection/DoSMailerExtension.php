@@ -15,15 +15,17 @@ class DoSMailerExtension extends AbstractResourceExtension implements PrependExt
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $this->configure($config, new Configuration(), $container,
-            self::CONFIGURE_LOADER |
-            self::CONFIGURE_DATABASE |
-            self::CONFIGURE_PARAMETERS |
-            self::CONFIGURE_VALIDATORS |
-            self::CONFIGURE_FORMS
-        );
+        parent::load($config, $container);
 
         $this->setupMailgun($container);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getBundleConfiguration()
+    {
+        return new Configuration();
     }
 
     /**
@@ -36,7 +38,6 @@ class DoSMailerExtension extends AbstractResourceExtension implements PrependExt
         $config = $this->processConfiguration(new Configuration(), $configs);
 
         // no sylius config
-        unset($config['object_manager']);
         $container->prependExtensionConfig('sylius_mailer', $config);
     }
 

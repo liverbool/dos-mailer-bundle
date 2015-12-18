@@ -16,8 +16,6 @@ class Configuration extends AbstractResourceConfiguration
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('dos_mailer');
 
-        $this->addDefaults($rootNode, 'doctrine/orm');
-
         $rootNode
             ->children()
                 ->scalarNode('sender_adapter')->defaultValue('sylius.email_sender.adapter.swiftmailer')->end()
@@ -26,11 +24,13 @@ class Configuration extends AbstractResourceConfiguration
         ;
 
         $this->setDefaults($rootNode, array(
-            'classes' => array(
+            'resources' => array(
                 'email' => array(
-                    'model' => 'DoS\MailerBundle\Model\Email',
-                    'form' => array(
-                        'default' => 'DoS\MailerBundle\Form\Type\EmailType',
+                    'classes' => array(
+                        'model' => 'DoS\MailerBundle\Model\Email',
+                        'form' => array(
+                            'default' => 'DoS\MailerBundle\Form\Type\EmailType',
+                        ),
                     ),
                 ),
             ),
