@@ -10,8 +10,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "sylius/mailer": "0.17.*",
-        "sylius/mailer-bundle": "0.17.*",
+        "sylius/mailer": "0.18.*",
+        "sylius/mailer-bundle": "0.18.*",
         "mailgun/mailgun-php" : ">=1.7"
     },
     "require-dev": {
@@ -29,7 +29,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.17-dev"
+            "dev-master": "0.18-dev"
         }
     }
 }
